@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   final routes = <String, WidgetBuilder>{
     FirstPage.tag: (context) => FirstPage(),
     InPutPhonePage.tag: (context) => InPutPhonePage(),
-    // OtpPage.tage: (context) => OtpPage(),
+    OtpPage.tag: (context) => OtpPage(),
     // MapPage.tage: (context) => MapPage()
   };
 

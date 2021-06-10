@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
+
 import 'inputphone_page.dart';
 // import 'otp_page.dart';
 // import 'map_page.dart';
-import 'main.dart';
 
 class FirstPage extends StatefulWidget {
   static String tag = 'first-page';
@@ -129,7 +129,7 @@ class _FirstPageState extends State<FirstPage> {
           ),
           SizedBox(height: 10.0),
           lable1,
-          SizedBox(height: 20.0),
+          SizedBox(height: 30.0),
           loginButton,
           SizedBox(height: 5.0),
           // cantLogin,

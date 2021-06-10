@@ -4,7 +4,6 @@ import 'package:flutter/services.dart';
 import 'first_page.dart';
 import 'otp_page.dart';
 import 'map_page.dart';
-import 'main.dart';
 // import 'dart:ui';
 
 class InPutPhonePage extends StatelessWidget {
@@ -71,7 +70,7 @@ class InPutPhonePage extends StatelessWidget {
           ),
           onPressed: () {
             print('Phone number: ');
-            // Navigator.of(context).pushNamed(FirstPage.tag);
+            Navigator.of(context).pushNamed(OtpPage.tag);
           },
           style: ElevatedButton.styleFrom(
             shape: CircleBorder(),
