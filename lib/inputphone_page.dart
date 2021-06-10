@@ -37,7 +37,7 @@ class InPutPhonePage extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
+            padding: EdgeInsets.fromLTRB(0, 0, 0, 80.0),
             child: Text(
               'ท่านจะได้รับรหัสยืนยัน หลังระบุเบอร์โทร',
               textAlign: TextAlign.center,
@@ -56,6 +56,67 @@ class InPutPhonePage extends StatelessWidget {
                 fontWeight: FontWeight.w900,
               ),
             ),
+          ),
+          Row(
+            children: [
+              SizedBox(
+                height: 50.0,
+                width: 70.0,
+                child: TextFormField(
+                  enabled: false,
+                  keyboardType: TextInputType.phone,
+                  autofocus: false,
+                  style: TextStyle(
+                    fontFamily: 'Kanit',
+                    fontSize: 30.0,
+                    color: Colors.black,
+                  ),
+                  initialValue: '',
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
+                    hintText: '+66',
+                    contentPadding: EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(50.0),
+                          bottomLeft: Radius.circular(50.0)),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 50.0,
+                width: 240.0,
+                child: TextFormField(
+                  keyboardType: TextInputType.phone,
+                  inputFormatters: [
+                    LengthLimitingTextInputFormatter(10),
+                    WhitelistingTextInputFormatter(RegExp('[0-9]'))
+                  ],
+                  // WhitelistingTextInputFormatter(RegExp('[0-9]')),
+                  // LengthLimitingTextInputFormatter(12),
+                  autofocus: false,
+                  style: TextStyle(
+                    fontFamily: 'Kanit',
+                    fontSize: 30.0,
+                    color: Colors.black,
+                  ),
+                  initialValue: '',
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
+                    hintText: '099-123-7890',
+                    contentPadding: EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(50.0),
+                          bottomRight: Radius.circular(50.0)),
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
         ],
       ),
@@ -118,72 +179,78 @@ class InPutPhonePage extends StatelessWidget {
       ),
     );
 
-    final inputPhone = Padding(
-      padding: EdgeInsets.only(top: 200.0, left: 20.0, right: 20.0),
-      child: Center(
-        child: Row(
-          children: [
-            SizedBox(
-              height: 50.0,
-              width: 70.0,
-              child: TextFormField(
-                enabled: false,
-                keyboardType: TextInputType.phone,
-                autofocus: false,
-                style: TextStyle(
-                  fontFamily: 'Kanit',
-                  fontSize: 30.0,
-                  color: Colors.black,
-                ),
-                initialValue: '',
-                decoration: InputDecoration(
-                  filled: true,
-                  fillColor: Colors.white,
-                  hintText: '+66',
-                  contentPadding: EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(50.0),
-                        bottomLeft: Radius.circular(50.0)),
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 50.0,
-              width: 280.0,
-              child: TextFormField(
-                keyboardType: TextInputType.phone,
-                inputFormatters: [
-                  LengthLimitingTextInputFormatter(10),
-                  WhitelistingTextInputFormatter(RegExp('[0-9]'))
-                ],
-                // WhitelistingTextInputFormatter(RegExp('[0-9]')),
-                // LengthLimitingTextInputFormatter(12),
-                autofocus: false,
-                style: TextStyle(
-                  fontFamily: 'Kanit',
-                  fontSize: 30.0,
-                  color: Colors.black,
-                ),
-                initialValue: '',
-                decoration: InputDecoration(
-                  filled: true,
-                  fillColor: Colors.white,
-                  hintText: '099-123-7890',
-                  contentPadding: EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(50.0),
-                        bottomRight: Radius.circular(50.0)),
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
+    // final inputPhone = Center(
+    //   child: ListView(
+    //     padding: EdgeInsets.only(
+    //       top: 220,
+    //     ),
+    //     shrinkWrap: true,
+    //     children: [
+    //       Row(
+    //         children: [
+    //           SizedBox(
+    //             height: 50.0,
+    //             width: 70.0,
+    //             child: TextFormField(
+    //               enabled: false,
+    //               keyboardType: TextInputType.phone,
+    //               autofocus: false,
+    //               style: TextStyle(
+    //                 fontFamily: 'Kanit',
+    //                 fontSize: 30.0,
+    //                 color: Colors.black,
+    //               ),
+    //               initialValue: '',
+    //               decoration: InputDecoration(
+    //                 filled: true,
+    //                 fillColor: Colors.white,
+    //                 hintText: '+66',
+    //                 contentPadding: EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0),
+    //                 border: OutlineInputBorder(
+    //                   borderRadius: BorderRadius.only(
+    //                       topLeft: Radius.circular(50.0),
+    //                       bottomLeft: Radius.circular(50.0)),
+    //                 ),
+    //               ),
+    //             ),
+    //           ),
+    //           SizedBox(
+    //             height: 50.0,
+    //             width: 250.0,
+    //             child: TextFormField(
+    //               keyboardType: TextInputType.phone,
+    //               inputFormatters: [
+    //                 LengthLimitingTextInputFormatter(10),
+    //                 WhitelistingTextInputFormatter(RegExp('[0-9]'))
+    //               ],
+    //               // WhitelistingTextInputFormatter(RegExp('[0-9]')),
+    //               // LengthLimitingTextInputFormatter(12),
+    //               autofocus: false,
+    //               style: TextStyle(
+    //                 fontFamily: 'Kanit',
+    //                 fontSize: 30.0,
+    //                 color: Colors.black,
+    //               ),
+    //               initialValue: '',
+    //               decoration: InputDecoration(
+    //                 filled: true,
+    //                 fillColor: Colors.white,
+    //                 hintText: '099-123-7890',
+    //                 contentPadding: EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
+    //                 border: OutlineInputBorder(
+    //                   borderRadius: BorderRadius.only(
+    //                       topRight: Radius.circular(50.0),
+    //                       bottomRight: Radius.circular(50.0)),
+    //                 ),
+    //               ),
+    //             ),
+    //           ),
+    //         ],
+    //       ),
+    //     ],
+    //   ),
+    // );
+
     final nextLable = Padding(
       padding: EdgeInsets.zero,
       child: Text(
@@ -220,7 +287,7 @@ class InPutPhonePage extends StatelessWidget {
                 ),
                 label,
                 backButton,
-                inputPhone,
+                // inputPhone,
               ],
             ),
           ),

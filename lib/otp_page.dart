@@ -10,9 +10,11 @@ class OtpPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+    String screenSize = (MediaQuery.of(context)).toString();
     final label = Center(
       child: ListView(
-        padding: EdgeInsets.only(left: 50.0, right: 50.0),
+        padding: EdgeInsets.only(left: 20.0, right: 20.0),
         shrinkWrap: true,
         children: [
           Padding(
@@ -36,7 +38,7 @@ class OtpPage extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
+            padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
             child: Text(
               'รหัสยืนยันได้ถูกส่ง',
               textAlign: TextAlign.center,
@@ -57,7 +59,7 @@ class OtpPage extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
+            padding: EdgeInsets.fromLTRB(0, 0, 0, 50),
             child: Text(
               'ไปยังเบอร์โทรของท่านแล้ว',
               textAlign: TextAlign.center,
@@ -77,6 +79,142 @@ class OtpPage extends StatelessWidget {
               ),
             ),
           ),
+          Row(
+            children: [
+              Padding(
+                padding: EdgeInsets.all(10.0),
+                child: SizedBox(
+                  height: 50.0,
+                  width: 70.0,
+                  child: TextFormField(
+                    keyboardType: TextInputType.number,
+                    inputFormatters: [
+                      LengthLimitingTextInputFormatter(1),
+                      WhitelistingTextInputFormatter(RegExp('[0-9]'))
+                    ],
+                    autofocus: false,
+                    style: TextStyle(
+                      fontFamily: 'Kanit',
+                      fontSize: 30.0,
+                      color: Colors.black,
+                    ),
+                    initialValue: '',
+                    cursorColor: Colors.black,
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.white,
+                      contentPadding: EdgeInsets.fromLTRB(25.0, 0.0, 0.0, 0.0),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(50.0),
+                              topRight: Radius.circular(50.0),
+                              bottomLeft: Radius.circular(50.0),
+                              bottomRight: Radius.circular(50.0))),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(10.0),
+                child: SizedBox(
+                  height: 50.0,
+                  width: 70.0,
+                  child: TextFormField(
+                    keyboardType: TextInputType.number,
+                    inputFormatters: [
+                      LengthLimitingTextInputFormatter(1),
+                      WhitelistingTextInputFormatter(RegExp('[0-9]'))
+                    ],
+                    autofocus: false,
+                    style: TextStyle(
+                      fontFamily: 'Kanit',
+                      fontSize: 30.0,
+                      color: Colors.black,
+                    ),
+                    initialValue: '',
+                    cursorColor: Colors.black,
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.white,
+                      contentPadding: EdgeInsets.fromLTRB(25.0, 0.0, 0.0, 0.0),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(50.0),
+                              topRight: Radius.circular(50.0),
+                              bottomLeft: Radius.circular(50.0),
+                              bottomRight: Radius.circular(50.0))),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(10.0),
+                child: SizedBox(
+                  height: 50.0,
+                  width: 70.0,
+                  child: TextFormField(
+                    keyboardType: TextInputType.number,
+                    inputFormatters: [
+                      LengthLimitingTextInputFormatter(1),
+                      WhitelistingTextInputFormatter(RegExp('[0-9]'))
+                    ],
+                    autofocus: false,
+                    style: TextStyle(
+                      fontFamily: 'Kanit',
+                      fontSize: 30.0,
+                      color: Colors.black,
+                    ),
+                    initialValue: '',
+                    cursorColor: Colors.black,
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.white,
+                      contentPadding: EdgeInsets.fromLTRB(25.0, 0.0, 0.0, 0.0),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(50.0),
+                              topRight: Radius.circular(50.0),
+                              bottomLeft: Radius.circular(50.0),
+                              bottomRight: Radius.circular(50.0))),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(10.0),
+                child: SizedBox(
+                  height: 50.0,
+                  width: 70.0,
+                  child: TextFormField(
+                    keyboardType: TextInputType.number,
+                    inputFormatters: [
+                      LengthLimitingTextInputFormatter(1),
+                      WhitelistingTextInputFormatter(RegExp('[0-9]'))
+                    ],
+                    autofocus: false,
+                    style: TextStyle(
+                      fontFamily: 'Kanit',
+                      fontSize: 30.0,
+                      color: Colors.black,
+                    ),
+                    initialValue: '',
+                    cursorColor: Colors.black,
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.white,
+                      contentPadding: EdgeInsets.fromLTRB(25.0, 0.0, 0.0, 0.0),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(50.0),
+                              topRight: Radius.circular(50.0),
+                              bottomLeft: Radius.circular(50.0),
+                              bottomRight: Radius.circular(50.0))),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );
@@ -89,7 +227,7 @@ class OtpPage extends StatelessWidget {
             size: 90.0,
           ),
           onPressed: () {
-            print('Phone number: ');
+            print('Otp number: ');
             // Navigator.of(context).pushNamed(FirstPage.tag);
           },
           style: ElevatedButton.styleFrom(
@@ -111,7 +249,7 @@ class OtpPage extends StatelessWidget {
       padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
       child: IconButton(
         onPressed: () {
-          print('Back Button');
+          print('Back Button $screenSize');
           Navigator.of(context).pushNamed(InPutPhonePage.tag);
         },
         icon: Icon(
@@ -138,143 +276,144 @@ class OtpPage extends StatelessWidget {
       ),
     );
 
-    final inputPhone = Padding(
-      padding: EdgeInsets.only(top: 220.0, left: 20.0, right: 20.0),
-      child: Center(
-        child: Row(
-          children: [
-            Padding(
-              padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
-              child: SizedBox(
-                height: 50.0,
-                width: 70.0,
-                child: TextFormField(
-                  keyboardType: TextInputType.number,
-                  inputFormatters: [
-                    LengthLimitingTextInputFormatter(1),
-                    WhitelistingTextInputFormatter(RegExp('[0-9]'))
-                  ],
-                  autofocus: false,
-                  style: TextStyle(
-                    fontFamily: 'Kanit',
-                    fontSize: 30.0,
-                    color: Colors.black,
-                  ),
-                  initialValue: '',
-                  decoration: InputDecoration(
-                    filled: true,
-                    fillColor: Colors.white,
-                    contentPadding: EdgeInsets.fromLTRB(25.0, 0.0, 0.0, 0.0),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(50.0),
-                            topRight: Radius.circular(50.0),
-                            bottomLeft: Radius.circular(50.0),
-                            bottomRight: Radius.circular(50.0))),
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(20.0, 0.0, 0.0, 0.0),
-              child: SizedBox(
-                height: 50.0,
-                width: 70.0,
-                child: TextFormField(
-                  keyboardType: TextInputType.number,
-                  inputFormatters: [
-                    LengthLimitingTextInputFormatter(1),
-                    WhitelistingTextInputFormatter(RegExp('[0-9]'))
-                  ],
-                  autofocus: false,
-                  style: TextStyle(
-                    fontFamily: 'Kanit',
-                    fontSize: 30.0,
-                    color: Colors.black,
-                  ),
-                  initialValue: '',
-                  decoration: InputDecoration(
-                    filled: true,
-                    fillColor: Colors.white,
-                    contentPadding: EdgeInsets.fromLTRB(25.0, 0.0, 0.0, 0.0),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(50.0),
-                            topRight: Radius.circular(50.0),
-                            bottomLeft: Radius.circular(50.0),
-                            bottomRight: Radius.circular(50.0))),
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(20.0, 0.0, 0.0, 0.0),
-              child: SizedBox(
-                height: 50.0,
-                width: 70.0,
-                child: TextFormField(
-                  keyboardType: TextInputType.number,
-                  inputFormatters: [
-                    LengthLimitingTextInputFormatter(1),
-                    WhitelistingTextInputFormatter(RegExp('[0-9]'))
-                  ],
-                  autofocus: false,
-                  style: TextStyle(
-                    fontFamily: 'Kanit',
-                    fontSize: 30.0,
-                    color: Colors.black,
-                  ),
-                  initialValue: '',
-                  decoration: InputDecoration(
-                    filled: true,
-                    fillColor: Colors.white,
-                    contentPadding: EdgeInsets.fromLTRB(25.0, 0.0, 0.0, 0.0),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(50.0),
-                            topRight: Radius.circular(50.0),
-                            bottomLeft: Radius.circular(50.0),
-                            bottomRight: Radius.circular(50.0))),
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(20.0, 0.0, 0.0, 0.0),
-              child: SizedBox(
-                height: 50.0,
-                width: 70.0,
-                child: TextFormField(
-                  keyboardType: TextInputType.number,
-                  inputFormatters: [
-                    LengthLimitingTextInputFormatter(1),
-                    WhitelistingTextInputFormatter(RegExp('[0-9]'))
-                  ],
-                  autofocus: false,
-                  style: TextStyle(
-                    fontFamily: 'Kanit',
-                    fontSize: 30.0,
-                    color: Colors.black,
-                  ),
-                  initialValue: '',
-                  decoration: InputDecoration(
-                    filled: true,
-                    fillColor: Colors.white,
-                    contentPadding: EdgeInsets.fromLTRB(25.0, 0.0, 0.0, 0.0),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(50.0),
-                            topRight: Radius.circular(50.0),
-                            bottomLeft: Radius.circular(50.0),
-                            bottomRight: Radius.circular(50.0))),
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
+    // final inputPhone = Padding(
+    //   padding: EdgeInsets.only(top: 220.0, left: 20.0, right: 20.0),
+    //   child: Center(
+    //     child: Row(
+    //       children: [
+    //         Padding(
+    //           padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
+    //           child: SizedBox(
+    //             height: 50.0,
+    //             width: 70.0,
+    //             child: TextFormField(
+    //               keyboardType: TextInputType.number,
+    //               inputFormatters: [
+    //                 LengthLimitingTextInputFormatter(1),
+    //                 WhitelistingTextInputFormatter(RegExp('[0-9]'))
+    //               ],
+    //               autofocus: false,
+    //               style: TextStyle(
+    //                 fontFamily: 'Kanit',
+    //                 fontSize: 30.0,
+    //                 color: Colors.black,
+    //               ),
+    //               initialValue: '',
+    //               decoration: InputDecoration(
+    //                 filled: true,
+    //                 fillColor: Colors.white,
+    //                 contentPadding: EdgeInsets.fromLTRB(25.0, 0.0, 0.0, 0.0),
+    //                 border: OutlineInputBorder(
+    //                     borderRadius: BorderRadius.only(
+    //                         topLeft: Radius.circular(50.0),
+    //                         topRight: Radius.circular(50.0),
+    //                         bottomLeft: Radius.circular(50.0),
+    //                         bottomRight: Radius.circular(50.0))),
+    //               ),
+    //             ),
+    //           ),
+    //         ),
+    //         Padding(
+    //           padding: EdgeInsets.fromLTRB(20.0, 0.0, 0.0, 0.0),
+    //           child: SizedBox(
+    //             height: 50.0,
+    //             width: 70.0,
+    //             child: TextFormField(
+    //               keyboardType: TextInputType.number,
+    //               inputFormatters: [
+    //                 LengthLimitingTextInputFormatter(1),
+    //                 WhitelistingTextInputFormatter(RegExp('[0-9]'))
+    //               ],
+    //               autofocus: false,
+    //               style: TextStyle(
+    //                 fontFamily: 'Kanit',
+    //                 fontSize: 30.0,
+    //                 color: Colors.black,
+    //               ),
+    //               initialValue: '',
+    //               decoration: InputDecoration(
+    //                 filled: true,
+    //                 fillColor: Colors.white,
+    //                 contentPadding: EdgeInsets.fromLTRB(25.0, 0.0, 0.0, 0.0),
+    //                 border: OutlineInputBorder(
+    //                     borderRadius: BorderRadius.only(
+    //                         topLeft: Radius.circular(50.0),
+    //                         topRight: Radius.circular(50.0),
+    //                         bottomLeft: Radius.circular(50.0),
+    //                         bottomRight: Radius.circular(50.0))),
+    //               ),
+    //             ),
+    //           ),
+    //         ),
+    //         Padding(
+    //           padding: EdgeInsets.fromLTRB(20.0, 0.0, 0.0, 0.0),
+    //           child: SizedBox(
+    //             height: 50.0,
+    //             width: 70.0,
+    //             child: TextFormField(
+    //               keyboardType: TextInputType.number,
+    //               inputFormatters: [
+    //                 LengthLimitingTextInputFormatter(1),
+    //                 WhitelistingTextInputFormatter(RegExp('[0-9]'))
+    //               ],
+    //               autofocus: false,
+    //               style: TextStyle(
+    //                 fontFamily: 'Kanit',
+    //                 fontSize: 30.0,
+    //                 color: Colors.black,
+    //               ),
+    //               initialValue: '',
+    //               decoration: InputDecoration(
+    //                 filled: true,
+    //                 fillColor: Colors.white,
+    //                 contentPadding: EdgeInsets.fromLTRB(25.0, 0.0, 0.0, 0.0),
+    //                 border: OutlineInputBorder(
+    //                     borderRadius: BorderRadius.only(
+    //                         topLeft: Radius.circular(50.0),
+    //                         topRight: Radius.circular(50.0),
+    //                         bottomLeft: Radius.circular(50.0),
+    //                         bottomRight: Radius.circular(50.0))),
+    //               ),
+    //             ),
+    //           ),
+    //         ),
+    //         Padding(
+    //           padding: EdgeInsets.fromLTRB(20.0, 0.0, 0.0, 0.0),
+    //           child: SizedBox(
+    //             height: 50.0,
+    //             width: 70.0,
+    //             child: TextFormField(
+    //               keyboardType: TextInputType.number,
+    //               inputFormatters: [
+    //                 LengthLimitingTextInputFormatter(1),
+    //                 WhitelistingTextInputFormatter(RegExp('[0-9]'))
+    //               ],
+    //               autofocus: false,
+    //               style: TextStyle(
+    //                 fontFamily: 'Kanit',
+    //                 fontSize: 30.0,
+    //                 color: Colors.black,
+    //               ),
+    //               initialValue: '',
+    //               decoration: InputDecoration(
+    //                 filled: true,
+    //                 fillColor: Colors.white,
+    //                 contentPadding: EdgeInsets.fromLTRB(25.0, 0.0, 0.0, 0.0),
+    //                 border: OutlineInputBorder(
+    //                     borderRadius: BorderRadius.only(
+    //                         topLeft: Radius.circular(50.0),
+    //                         topRight: Radius.circular(50.0),
+    //                         bottomLeft: Radius.circular(50.0),
+    //                         bottomRight: Radius.circular(50.0))),
+    //               ),
+    //             ),
+    //           ),
+    //         ),
+    //       ],
+    //     ),
+    //   ),
+    // );
+
     final nextLable = Padding(
       padding: EdgeInsets.zero,
       child: Text(
@@ -287,7 +426,6 @@ class OtpPage extends StatelessWidget {
         ),
       ),
     );
-    double screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -311,7 +449,7 @@ class OtpPage extends StatelessWidget {
                 ),
                 label,
                 backButton,
-                inputPhone,
+                // inputPhone,
               ],
             ),
           ),
